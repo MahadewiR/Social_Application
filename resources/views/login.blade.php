@@ -2,18 +2,39 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .card {
-            max-width: 300px;
-            /* reduce the width of the card */
+            max-width: 400px;
             margin: 40px auto;
-            /* center the card horizontally */
             position: absolute;
-            /* tambahkan posisi absolut */
             top: 50%;
-            /* atur posisi vertikal ke 50% */
             left: 50%;
-            /* atur posisi horizontal ke 50% */
             transform: translate(-50%, -50%);
-            /* atur transformasi untuk memindahkan card ke tengah */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-header {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
         }
     </style>
 </head>
