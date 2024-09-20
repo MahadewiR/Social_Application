@@ -9,33 +9,40 @@
             left: 50%;
             transform: translate(-50%, -50%);
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 10px rgba(71, 69, 69, 0.2);
         }
+        /* untuk card keseluruhan login */ 
 
         .card-header {
-            background-color: #007bff;
+            background-color: #242729;
             color: #ffffff;
             padding: 10px;
             border-radius: 10px 10px 0 0;
         }
+        /* padding bagian header login */
 
         .card-body {
-            padding: 20px;
+            padding: 50px;
         }
+        /* atur design body login keseluruhan */
 
         .form-label {
             font-weight: bold;
         }
+        /* font email dan password */
 
         .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
+            background-color: #768ea7;
+            border-color: #7595b8;
         }
+        /* warna tombol login */
 
         .btn-success {
-            background-color: #28a745;
+            background-color: #64976f;
             border-color: #28a745;
         }
+        /* warna tombol register */
+        
     </style>
 </head>
 

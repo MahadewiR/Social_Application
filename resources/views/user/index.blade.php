@@ -43,7 +43,7 @@
                                 <img src="{{ asset('storage/image/' . $item->image) }}" alt="Post Image" class="img-fluid">
                             @endif
                             <div class="mt-3">{{ $item->content }}</div>
-                            <p>Hashtag: {{ $item->hashtag }}</p>
+                            
 
                             <div class="mt-2">
                                 <a href="{{ route('posts.edit', $item->id) }}" class="btn btn-primary">Update</a>

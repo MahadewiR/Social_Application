@@ -14,13 +14,10 @@
                         @csrf
                         @method('PUT')
                         <div class="form-group">
-                            <label for="content">Content:</label>
-                            <textarea class="form-control" id="content" name="content" required>{{ $comment->content }}</textarea>
+                            <label for="comment">Edit Comment:</label>
+                            <textarea class="form-control" id="comment" name="content" required>{{ $comment->comment }}</textarea>
                         </div>
-                        <div class="form-group">
-                            <label for="hashtag">Hashtag</label>
-                            <input type="text" name="hashtag" id="hashtag" class="form-control" value="{{ $comment->hashtag }}">
-                        </div>
+                       
                         <div class="form-group">
                             <label for="image">Image:</label>
                             @if($comment->image)

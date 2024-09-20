@@ -1,86 +1,47 @@
 @extends('layouts.app')
-@section('title','Edit User')
+
+@section('title', 'Edit User')
+
 @section('content')
+    <div class="container d-flex justify-content-center align-items-center" style="height: 100vh; background-color: #f5f5f5;">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card mx-auto" style="width: 80%; max-width: 800px; border: none; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+                    <div class="card-header bg-primary text-white">
+                        <h2>Edit Profile</h2>
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ route('user.update', $user->id) }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            @method('PUT')
 
-<div class="container d-flex justify-content-center align-items-center" style="height: 100vh">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card mx-auto" style="width: 80%; max-width: 800px;">
-                <div class="card-header">Edit User</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('user.update', $user->id) }}" enctype="multipart/form-data">
-                        @csrf
-                        @method('PUT')
-
-                        <div class="form-group row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ $user->name }}"  >
-
-
+                            <!-- Form fields -->
+                            <div class="form-group mb-3">
+                                <label for="name" class="font-weight-bold">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" value="{{ $user->name }}" placeholder="Enter your name">
                             </div>
-                        </div>
 
-                        <div class="form-group row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control " name="email" value="{{ $user->email }}"  >
-
-
+                            <div class="form-group mb-3">
+                                <label for="email" class="font-weight-bold">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}" placeholder="Enter your email">
                             </div>
-                        </div>
 
-                        <div class="form-group row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control " name="new_password"  >
-
-
+                            <div class="form-group mb-3">
+                                <label for="bio" class="font-weight-bold">Bio</label>
+                                <textarea class="form-control" id="bio" name="bio" placeholder="Enter your bio">{{ $user->bio }}</textarea>
                             </div>
-                        </div>
 
-                        <div class="form-group row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="old_password" >
+                            <div class="form-group mb-3">
+                                <label for="profile_picture" class="font-weight-bold">Profile Picture</label>
+                                <input type="file" class="form-control" id="profile_picture" name="profile_picture">
                             </div>
-                        </div>
 
-                        <div class="form-group row mb-3">
-                            <label for="profile_picture" class="col-md-4 col-form-label text-md-right">Profile Picture</label>
-
-                            <div class="col-md-6">
-                                <input id="profile_picture" type="file"   name="profile_picture">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-3">
-                            <label for="bio" class="col-md-4 col-form-label text-md-right">Bio</label>
-
-                            <div class="col-md-6">
-                                <textarea id="bio" class="form-control " name="bio" required>{{ $user->bio }}</textarea>
-
-
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Update
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-primary btn-block">Update Profile</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
 @endsection
